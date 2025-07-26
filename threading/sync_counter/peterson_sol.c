@@ -70,9 +70,7 @@ void entry_section(size_t pid)
   {
     if (sched_yield() == -1)
     {
-      char buff[128];
-      sprintf(buff, "falied to reschedule the thread with pid %ld\n", pid);
-      perror(buff);
+      fprintf(stderr, "falied to reschedule the thread with pid %ld\n", pid);
       exit(EXIT_FAILURE);
     }
   }
